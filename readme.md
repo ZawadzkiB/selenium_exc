@@ -1,16 +1,20 @@
 # SETUP
 
+<b>Please do before workshops</b>
+
 ## Install:
 
-### 1. Java 
+### <b>1. Java </b>
 
-JDK 8:
+Download JDK 8:
 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 
 how to install java:
 https://www3.ntu.edu.sg/home/ehchua/programming/howto/JDK_Howto.html
 
-after installation type in terminal | cmd
+important is to set environment variable JAVA_HOME
+
+after installation type in terminal or cmd
 
     java -version
 
@@ -26,18 +30,20 @@ also type
 
 output should be path to your java installation
 
-### 2. IDE
+### <b>2. IDE </b>
 
 https://www.jetbrains.com/idea/download
 
 can be community version
 
-### 3. Google Chrome
+### 3. <b>Google Chrome </b>
+
+latest update please :)
 
 
 # App for tests
 
-Download this repo
+Download/Clone this repo
 
     git clone https://github.com/ZawadzkiB/selenium_exc.git
 
@@ -51,4 +57,6 @@ then
 
 then open browser on: 
     
-    http://localhost:4160
+<b>`http://localhost:4160`</b>
+
+we will be writing tests for this app :) 
