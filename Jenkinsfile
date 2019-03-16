@@ -16,6 +16,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'echo test'
+                sh 'curl --connect-timeout 5 --max-time 10 --retry 5 --retry-delay 0 --retry-max-time 20 -i "http://localhost:4160"'
             }
         }
     }
