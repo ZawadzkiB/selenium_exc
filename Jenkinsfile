@@ -13,5 +13,10 @@ pipeline {
                 sh 'bash -c "cd shopizer_old/sm-shop && exec -a apka ./mvnw clean spring-boot:run" &'
             }
         }
+        stage('Test') {
+            steps {
+                sh 'echo test'
+            }
+        }
     }
 }
