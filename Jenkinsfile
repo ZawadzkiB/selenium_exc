@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh 'BUILD_ID=dontKillMe' 
                 sh 'if [ $(pidof apka) ]; then kill $(pidof apka); fi'
-                sh 'bash -c "exec -a apka ./mvnw -f sm-shop/pom.xml clean spring-boot:run" &'
+                sh 'cd shopizer_old && bash -c "exec -a apka ./mvnw -f sm-shop/pom.xml clean spring-boot:run" &'
             }
         }
         stage('Test') {
