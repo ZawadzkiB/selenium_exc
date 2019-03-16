@@ -15,7 +15,7 @@ pipeline {
                         'kill $(pidof apka)\n' +
                         'fi\n' +
                         '\n' +
-                        'bash -c "cd shopizer_old/sm-shop && exec -a apka ./mvnw clean spring-boot:runr" &'
+                        'bash -c "cd shopizer_old/sm-shop && exec -a apka ./mvnw clean spring-boot:run" &'
             }
         }
     }
