@@ -22,7 +22,7 @@ public class TypesExercises {
     System.out.println(checkDouble(9.0,9.0,18.0));
   }
 
-  private static Boolean checkLength(String text) {
+  public static Boolean checkLength(String text) {
     int lenghtOftext = text.length();
     return lenghtOftext > 3 && lenghtOftext < 6;
   }

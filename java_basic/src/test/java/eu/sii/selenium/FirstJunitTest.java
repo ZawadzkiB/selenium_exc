@@ -28,6 +28,13 @@ public class FirstJunitTest {
   }
 
   @Test
+  public void addTestNegative() {
+    System.out.println("test1");
+    int result = add(1, 1);
+    Assertions.assertFalse(result == 3);
+  }
+
+  @Test
   public void addTestDecimals() {
     System.out.println("test2");
     int result = add(1.55, 1.40);
