@@ -12,12 +12,13 @@ Java open source e-commerce software
 
 See the demo:
 -------------------
+Shoppizer demo app
 http://demo.shopizer.com:8080
 
 
 To get the code:
 -------------------
-Clone the repository:
+Original repository:
 $ git clone git://github.com/shopizer-ecommerce/shopizer.git
 
 If this is your first time using Github, review http://help.github.com to learn the basics.
@@ -29,45 +30,22 @@ To build the application:
 From the command line with Maven installed:
 
 	$ cd shopizer
-	$ mvn clean install
-	
+	$ ./mvnw clean install
 
-Run the application from Tomcat 
--------------------
-copy sm-shop/target/ROOT.war to tomcat or any other application server deployment dir
-
-Increase heap space to 1024 m or at least 512 m
-
-### Heap space configuration in Tomcat:
-
-
-If you are using Tomcat, edit catalina.bat for windows users or catalina.sh for linux / Mac users
-
-	in Windows
-	set JAVA_OPTS="-Xms1024m -Xmx1024m -XX:MaxPermSize=256m" 
-	
-	in Linux / Mac
-	export JAVA_OPTS="-Xms1024m -Xmx1024m -XX:MaxPermSize=256m" 
 
 Run the application from Spring boot 
 -------------------
 
        $ cd sm-shop
-       $ mvn spring-boot:run
+       $ ./mvnw spring-boot:run
 
-Run the application from Spring boot in eclipse
--------------------
-
-Right click on com.salesmanager.shop.application.ShopApplication
-
-run as Java Application
 
 ### Access the application:
 -------------------
 
-Access the deployed web application at: http://localhost:8080/
+Access the deployed web application at: http://localhost:4160/
 
-Acces the admin section at: http://localhost:8080/admin
+Acces the admin section at: http://localhost:4160/admin
 
 #####username : admin
 #####password : password
