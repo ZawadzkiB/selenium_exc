@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'cd shopizer_old ./mvnw clean install'
+                sh 'cd shopizer_old && ./mvnw clean install'
             }
         }
         stage('Deploy') {
