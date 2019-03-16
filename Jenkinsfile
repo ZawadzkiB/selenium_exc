@@ -9,7 +9,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh 'BUILD_ID=dontKillMe\n' +
-                        '\n' +
+                        '\n' + 
                         'if [ $(pidof apka) ]\n' +
                         'then\n' +
                         'kill $(pidof apka)\n' +
