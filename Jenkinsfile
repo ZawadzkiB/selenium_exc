@@ -12,10 +12,10 @@ pipeline {
                 sh 'bash -c "cd shopizer_old/sm-shop && exec -a apka ./mvnw clean spring-boot:run" &'
             }
         }
-        post {
+    }
+    post {
         always {
             sh 'kill $(pidof apka)'
         }
-    }
     }
 }
