@@ -16,7 +16,7 @@ public class Arrayss {
     //             0   1   2   3   4
     // strings = ['a','b','c','d','e']
 
-    System.out.println("Moje stringi: " + strings); // ??
+//    System.out.println("Moje stringi: " + strings[1]); // ??
 
 //    System.out.println(strings[0]);
 
@@ -24,14 +24,14 @@ public class Arrayss {
 //      System.out.println(str);
 //    }
 
-//    Stream.of(strings).forEach(System.out::print);
+    Stream.of(strings).forEach(System.out::print);
 
     Integer[] inty = new Integer[]{1,2,3,4,5,6,7};
-//    for(int i: inty) {
-//      System.out.println(i);
-//    }
+    for(int i: inty) {
+      System.out.println(i);
+    }
 
-//    Stream.of(inty).forEach(System.out::print);
+    Stream.of(inty).forEach(it -> System.out.println(it*10));
 
     String[][] splontaneStringi = new String[][]{{"a","b"},{"c","d","z","y"},{"e","f"}};
     System.out.println(splontaneStringi[1][2]);

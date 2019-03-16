@@ -11,19 +11,19 @@ public class Types {
 
     Boolean isTrue;
 
-//    oneLetter = ??
-//    someText = ??
-//    int number = ??
-//    floatingPointNumber = ??
-//    isTrue = ??
+    oneLetter = 's';
+    someText = "lalalalalalalala";
+    number = 6;
+    floatingPointNumber = 3.66;
+    isTrue = true;
 
-//    System.out.println("Zmienne to" +
-//            oneLetter + ", " +
-//            someText + ", " +
-//            number + ", " +
-//            floatingPointNumber + ", " +
-//            isTrue + ", "
-//            );
+    System.out.println("Zmienne to" +
+            oneLetter + ", " +
+            someText + ", " +
+            number + ", " +
+            floatingPointNumber + ", " +
+            isTrue + ", "
+            );
 
     /*
     Some small tests here
@@ -32,11 +32,11 @@ public class Types {
 
     System.out.println("Make all statements pass");
 
-//    checkChar(oneLetter);
-//    checkSomeText(someText);
-//    checkNumber(number);
-//    checkNumber(floatingPointNumber);
-//    checkIsTrue(isTrue);
+    checkChar(oneLetter);
+    checkSomeText(someText);
+    checkNumber(number);
+    checkNumber(floatingPointNumber);
+    checkIsTrue(isTrue);
 
   }
 
@@ -50,7 +50,7 @@ public class Types {
   }
 
   private static void checkSomeText(String text) {
-    if (text == "lalalalalalalala") {
+    if (text.equals("lalalalalalalala")) {
       System.out.println("Text is ok");
     } else {
       System.out.println("Text should be lalalalalalalala");

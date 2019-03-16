@@ -13,4 +13,26 @@ public class LoopExcercise {
    *  użyj metody print zamiast println
    */
 
+  public static void main(String[] args) {
+    printNumbers();
+    printStar();
+  }
+
+  static void printNumbers() {
+    for(int i=0; i <= 1000; i++) {
+      if (i % 3 == 0 && i % 5 == 0) {
+        System.out.println(i);
+      }
+    }
+  }
+
+  static void printStar() {
+    for(int i=0; i < 5; i++){
+      System.out.println();
+      for(int j=0; j < i; j++){
+        System.out.print(" * ");
+      }
+    }
+  }
+
 }

@@ -9,17 +9,21 @@ public class Lists {
   public static void main(String[] args) {
 
     //array list vs linked list
-    List<String> linkedString = new LinkedList<>();
+    List<String> linkedString = new ArrayList<>();
 
     List<String> stringi = new ArrayList<>();
     stringi.add("a");
     stringi.add("b");
     stringi.add("c");
     stringi.add("d");
+    stringi.add("d");
     System.out.println(stringi);
     System.out.println(stringi.get(1));
 
     stringi.remove(1);
+
+    String[] strinTab = new String[]{"a","b","c"};
+    strinTab[1] = null;
 
     System.out.println(stringi);
     System.out.println(stringi.get(1));
