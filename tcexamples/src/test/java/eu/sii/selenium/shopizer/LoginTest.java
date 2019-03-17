@@ -1,6 +1,8 @@
 package eu.sii.selenium.shopizer;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -11,14 +13,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class LoginTest {
+class LoginTest {
 
-  WebDriver driver;
-  WebDriverWait wait;
+  private WebDriver driver;
+  private WebDriverWait wait;
+
+  @BeforeAll
+  static void config() {
+    WebDriverManager.chromedriver().setup();
+  }
 
   @BeforeEach
-  public void setup() {
-    System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
+  void setup() {
     driver = new ChromeDriver();
     wait = new WebDriverWait(driver, 10);
     driver.get("http://demo.shopizer.com:8080/shop/customer/customLogon.html");
@@ -38,7 +44,7 @@ public class LoginTest {
 
 
   @AfterEach
-  public void tearDown() {
+  void tearDown() {
     driver.quit();
   }
 
