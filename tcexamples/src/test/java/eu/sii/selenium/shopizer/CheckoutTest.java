@@ -22,7 +22,6 @@ public class CheckoutTest {
   private WebDriverWait wait;
 
   private LoginPage loginPage;
-  private MainPage mainPage;
 
   @BeforeAll
   static void config() {
@@ -35,15 +34,13 @@ public class CheckoutTest {
     wait = new WebDriverWait(driver, 10);
     driver.get("http://demo.shopizer.com:8080/shop/customer/customLogon.html");
     loginPage = new LoginPage(driver);
-    mainPage = new MainPage(driver);
   }
 
   @Test
   void checkoutTest() {
-    loginPage.login();
-    mainPage.checkWelcomeMessage();
-    mainPage.clickFirstCategory();
-
+    loginPage.login()
+      .assertWelcomeMessage()
+      .clickFirstCategory();
 
     WebElement addToCart = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
             By.cssSelector("#productsContainer .addToCart"))).get(0);

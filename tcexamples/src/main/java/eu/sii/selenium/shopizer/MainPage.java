@@ -17,10 +17,11 @@ public class MainPage {
     wait = new WebDriverWait(driver, 10);
   }
 
-  public void checkWelcomeMessage() {
+  public MainPage assertWelcomeMessage() {
     String welcomeMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(
             By.cssSelector(".click_menu span"))).getText();
     assertThat(welcomeMessage).containsIgnoringCase("test-a123");
+    return this;
   }
 
   public void clickFirstCategory() {

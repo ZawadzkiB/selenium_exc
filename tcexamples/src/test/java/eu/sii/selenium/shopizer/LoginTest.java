@@ -31,7 +31,7 @@ class LoginTest {
   @Test
   void loginTest() {
     loginPage.login();
-    mainPage.checkWelcomeMessage();
+    mainPage.assertWelcomeMessage();
   }
 
 
