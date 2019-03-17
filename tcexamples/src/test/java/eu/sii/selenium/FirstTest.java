@@ -23,9 +23,10 @@ public class FirstTest {
 
 
   @Test
-  public void openGoogleAndSearch() {
+  public void openGoogleAndSearch() throws InterruptedException {
     driver.get("http://google.com");
     WebElement element = driver.findElement(By.name("q"));
+    Thread.sleep(5000);
     element.sendKeys("obiad");
     element.submit();
     List<WebElement> results = driver.findElements(By.cssSelector(".r h3"));
