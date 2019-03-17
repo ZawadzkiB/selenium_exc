@@ -24,7 +24,8 @@ public class MainPage {
     return this;
   }
 
-  public void clickFirstCategory() {
+  public ProductsPage clickFirstCategory() {
     driver.findElements(By.cssSelector(".mainmenu li")).get(0).click();
+    return new ProductsPage(driver);
   }
 }
