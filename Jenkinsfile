@@ -1,16 +1,11 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
-            steps {
-                sh 'cd shopizer_old && ./mvnw clean install'
-            }
-        }
-        stage('Deploy') {
+        stage('BUild & Deploy') {
             steps {
                 sh 'BUILD_ID=dontKillMe' 
                 sh 'if [ $(pidof apka) ]; then kill $(pidof apka); fi'
-                sh 'cd shopizer_old && ./mvnw clean install && exec -a apka ./mvnw -f sm-shop/pom.xml clean spring-boot:run &'
+                sh 'cd shopizer_old && ./mvnw clean install && exec -a apka ./mvnw -f sm-shop/pom.xml clean spring-boot:run'
             }
         }
         stage('Test') {
