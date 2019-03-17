@@ -21,6 +21,9 @@ public class CheckoutTest {
   private WebDriver driver;
   private WebDriverWait wait;
 
+  private LoginPage loginPage;
+  private MainPage mainPage;
+
   @BeforeAll
   static void config() {
     WebDriverManager.chromedriver().setup();
@@ -31,28 +34,22 @@ public class CheckoutTest {
     driver = new ChromeDriver();
     wait = new WebDriverWait(driver, 10);
     driver.get("http://demo.shopizer.com:8080/shop/customer/customLogon.html");
+    loginPage = new LoginPage(driver);
+    mainPage = new MainPage(driver);
   }
 
   @Test
   void checkoutTest() {
-    driver.findElement(By.id("signin_userName")).sendKeys("ddff@dd.ff");
-    driver.findElement(By.id("signin_password")).sendKeys("test1234");
-    driver.findElement(By.id("genericLogin-button")).click();
+    loginPage.login();
+    mainPage.checkWelcomeMessage();
+    mainPage.clickFirstCategory();
 
-    String welcomeMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(
-            By.cssSelector(".click_menu span"))).getText();
 
-    assertThat(welcomeMessage).containsIgnoringCase("test-a123");
-
-    driver.findElements(By.cssSelector(".mainmenu li")).get(0).click();
     WebElement addToCart = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
             By.cssSelector("#productsContainer .addToCart"))).get(0);
 
     ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", addToCart);
     wait.until(ExpectedConditions.elementToBeClickable(addToCart)).click();
-
-    WebElement miniCart = driver.findElement(By.cssSelector("#miniCartSummary a"));
-    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", miniCart);
 
     new Actions(driver).moveToElement(driver.findElement(By.cssSelector("#miniCartSummary a")))
             .build().perform();
@@ -60,6 +57,9 @@ public class CheckoutTest {
     wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".checkout-bg > a")))
             .click();
 
+    assertThat(wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
+            By.cssSelector("#mainCartTable tbody tr"))).size()
+    ).isEqualTo(1);
   }
 
 
