@@ -18,7 +18,6 @@ public class MiniCart {
             .build().perform();
   }
 
-
   public CheckoutPage openCheckout() {
     wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".checkout-bg > a")))
             .click();

@@ -44,7 +44,6 @@ public class CheckoutTest {
             .assertThatNumberOfDifferentItemsIsCorrect(1);
   }
 
-
   @AfterEach
   void tearDown() {
     driver.quit();
